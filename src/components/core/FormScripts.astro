@@ -1,0 +1,78 @@
+<script is:inline>
+    
+    function checkValue() {
+            var radios = document.getElementsByName("rooms");
+            for (const radio of radios) {
+                if (radio.checked) {
+                    return radio.value;
+                }
+            }
+}
+
+
+  
+      function postToForm(e) 
+      {     e.preventDefault();
+
+            
+
+            // let nextbutton = document.getElementById('next-button');
+            
+        //   let backbutton = document.getElementById('back-button');
+        //   backbutton.style.display = 'none';
+            
+           let selectedRooms = checkValue();
+           let email = document.getElementById('email').value;
+           let phone = document.getElementById('phone').value;
+           let rooms = selectedRooms;
+
+           
+           
+ 
+
+            try {
+                let fromaddress = document.getElementById('fromaddress').value;
+                let toaddress = document.getElementById('toaddress').value;
+                let theday = document.getElementById('theday').value;
+                let themonth = document.getElementById('themonth').value;
+                let theyear = document.getElementById('theyear').value;
+                let leadSource = document.getElementById('leadSource').value;
+            }
+            catch(err) {
+                let nextbutton = document.getElementById('next-button');
+            nextbutton.classList.add("hide");
+            let submitbutton = document.getElementById('submit-button');
+            submitbutton.classList.remove("hide");
+            let formOne = document.getElementById('form-1');
+            formOne.classList.add("hide");
+            let formTwo = document.getElementById('form-2');
+            formTwo.classList.remove("hide");
+            }
+
+           
+
+          let xhr = new XMLHttpRequest();
+          const yourUrl = 'https://api.form-data.com/f/yi9fvsylfrhxywjh69kkv';
+        //   const yourUrl = 'https://app.headlessforms.cloud/api/v1/form-submission/oGmvA82Vjv';
+          xhr.open("POST", yourUrl, true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(JSON.stringify({
+              email: email,
+              phone: phone,
+              rooms: rooms,
+              fromaddress: fromaddress,
+              toaddress: toaddress,
+              date: theday + '-' + themonth + '-' + theyear,
+              leadSource: leadSource
+          }));
+          xhr.onreadystatechange = function() {
+              if (xhr.readyState == XMLHttpRequest.DONE) {
+                  window.top.location.href = 'https://iselectmovers2.netlify.app/success/';
+              }
+          } 
+      }
+      
+      
+      
+      
+      </script> 

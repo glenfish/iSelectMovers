@@ -40,17 +40,35 @@
 
 #iSelectMovers-Form {
 	position: relative;
-	top:-180px;
+	top:-190px;
 }
 #iSelectMovers-Form .form-bgnd {
 	/* background-color: rgba(255,255,255,0.7); */
-	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 30%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 30%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 30%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 15%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 15%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 15%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
 #iSelectMovers-Form form {
 	max-width:500px;
-	max-height: 200px;
+	max-height: 400px;
 	margin: auto;
+}
+
+#iSelectMovers-Form form input[type="radio"] {
+	width: 35px;
+	height: 35px;
+}
+
+#iSelectMovers-Form form input[type="radio"]:focus {
+	box-shadow: none;
+	outline:none;
+}
+
+#iSelectMovers-Form form .hide {
+	display:none;
+}
+
+#iSelectMovers-Form form .show {
+	display:block;
 }
