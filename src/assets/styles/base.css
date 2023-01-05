@@ -87,11 +87,11 @@
 	outline:none;
 }
 
-#iSelectMovers-Form form .hide {
+.hide {
 	display:none;
 }
 
-#iSelectMovers-Form form .show {
+.show {
 	display:block;
 }
 
@@ -124,3 +124,6 @@
 	}
 
 }
+
+
+

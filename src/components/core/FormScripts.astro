@@ -1,6 +1,6 @@
 <script is:inline>
 
-var email,phone,rooms,fromaddress,toaddress,date,leadSource,selectedRooms,nextbutton,backbutton,submitbutton,formOne,formTwo;
+var email,phone,rooms,fromaddress,toaddress,date,leadSource,selectedRooms,nextbutton,backbutton,submitbutton,formOne,formTwo,theForm,successMessage;
 var secondPage = false;
 
 document.getElementById("back-button").addEventListener("click", goBack);
@@ -33,6 +33,12 @@ document.getElementById("back-button").addEventListener("click", goBack);
                     return radio.value;
                 }
             }
+    }
+
+    function jump(h){
+    var url = location.href;
+    location.href = "#"+h;        
+    history.replaceState(null,null,url);
     }
 
 
@@ -132,7 +138,12 @@ document.getElementById("back-button").addEventListener("click", goBack);
           }));
           xhr.onreadystatechange = function() {
               if (xhr.readyState == XMLHttpRequest.DONE) {
-                  window.top.location.href = 'https://iselectmovers2.netlify.app/success/';
+                //   window.top.location.href = 'https://iselectmovers2.netlify.app/success/';
+                theForm = document.getElementById('iSelectMovers-Form');
+                theForm.classList.add('hide');
+                successMessage = document.getElementById('success-message');
+                successMessage.classList.remove('hide');
+                jump('success-message');
               }
           } 
             } else {
